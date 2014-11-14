@@ -111,6 +111,12 @@ public class ParserTestNormal {
         }
     }
 
+    public static class TestDisectorFive extends TestDisector {
+        public TestDisectorFive() {
+            super("BAR", "SUBBAR", "bar");
+        }
+    }
+
     public static class TestDisectorWildCard extends TestDisector {
         public TestDisectorWildCard() {
             super("SOMETYPE", "WILD", "*");
@@ -125,6 +131,7 @@ public class ParserTestNormal {
             addDisector(new TestDisectorTwo());
             addDisector(new TestDisectorThree());
             addDisector(new TestDisectorFour());
+            addDisector(new TestDisectorFive());
             addDisector(new TestDisectorWildCard());
             setRootType("INPUTTYPE");
         }
@@ -153,7 +160,9 @@ public class ParserTestNormal {
         assertEquals("Y=OTHERTYPE:OTHERTYPE:output2:Something=OTHERTYPE:OTHERTYPE:output2:Something", output.getOutput5b());
         assertEquals("Z=FOO:FOO:output1.foo:Something", output.getOutput6());
         assertEquals("Z=BAR:BAR:output1.bar:Something", output.getOutput7());
-        assertEquals("Z=WILD:WILD:output1.wild:Something", output.getOutput8());
+        assertEquals("Z=WILD1:WILD:output1.wild:Something", output.getOutput8());
+        assertEquals("Z=WILD2:BAR:output1.bar:Something", output.getOutput9());
+        assertEquals("Z=WILD3:SUBBAR:output1.bar.bar:Something", output.getOutput10());
     }
 
     // ---------------------------------------------
@@ -177,7 +186,9 @@ public class ParserTestNormal {
         assertEquals("Y=OTHERTYPE:OTHERTYPE:output2:Something=OTHERTYPE:OTHERTYPE:output2:Something", output.getOutput5b());
         assertEquals("Z=FOO:FOO:output1.foo:Something", output.getOutput6());
         assertEquals("Z=BAR:BAR:output1.bar:Something", output.getOutput7());
-        assertEquals("Z=WILD:WILD:output1.wild:Something", output.getOutput8());
+        assertEquals("Z=WILD1:WILD:output1.wild:Something", output.getOutput8());
+        assertEquals("Z=WILD2:BAR:output1.bar:Something", output.getOutput9());
+        assertEquals("Z=WILD3:SUBBAR:output1.bar.bar:Something", output.getOutput10());
     }
 
     // ---------------------------------------------

@@ -65,10 +65,10 @@ public class CookiesTest {
             "HTTP.COOKIE:request.cookies.jquery-ui-theme",
             "HTTP.SETCOOKIES:response.cookies" ,
             "HTTP.SETCOOKIE:response.cookies.nba-4",
-            "STRING:response.cookies.nba-4.value",
-            "STRING:response.cookies.nba-4.expires",
-            "STRING:response.cookies.nba-4.path",
-            "STRING:response.cookies.nba-4.domain"
+            "STRING:response.cookies.*.value",
+            "STRING:response.cookies.*.expires",
+            "STRING:response.cookies.*.path",
+            "STRING:response.cookies.*.domain"
             })
         public void setValue(final String name, final String value) {
             results.put(name, value);

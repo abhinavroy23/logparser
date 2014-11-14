@@ -131,11 +131,34 @@ public class ParserTestNormalTestRecord {
 
     @Field({ "WILD:output1.wild" })
     public void setValue8(String name, String value) {
-        output8 = output8 + "=WILD:" + name + ":" + value;
+        output8 = output8 + "=WILD1:" + name + ":" + value;
     }
 
     public String getOutput8() {
         return output8;
     }
+
+    private String output9 = "Z";
+
+    @Field({ "BAR:*.bar" })
+    public void setValue9(String name, String value) {
+        output9 = output9 + "=WILD2:" + name + ":" + value;
+    }
+
+    public String getOutput9() {
+        return output9;
+    }
+
+    private String output10 = "Z";
+
+    @Field({ "SUBBAR:output1.*.bar" })
+    public void setValue10(String name, String value) {
+        output10 = output10 + "=WILD3:" + name + ":" + value;
+    }
+
+    public String getOutput10() {
+        return output10;
+    }
+
 
 }
